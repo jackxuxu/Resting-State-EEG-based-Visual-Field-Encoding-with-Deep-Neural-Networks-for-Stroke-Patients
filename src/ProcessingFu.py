@@ -129,81 +129,81 @@ def readNormalized2stDifferenceEEG(file):
 #filecontrol=sio.loadmat('allcontrol_afterv6.mat')
 filecontrol=sio.loadmat('allcontrol_afterv6flip.mat')
 print(filecontrol['alldata2'][1][0].shape)
-# filefu=sio.loadmat('allfu_afterv6flip.mat')
-#  
-# filepost=sio.loadmat('allpost_afterv6flip.mat')
-#  
-# filepre=sio.loadmat('allpre_afterv6flip.mat')
+filefu=sio.loadmat('allfu_afterv6flip.mat')
+  
+filepost=sio.loadmat('allpost_afterv6flip.mat')
+  
+filepre=sio.loadmat('allpre_afterv6flip.mat')
 print("start")
 X1=readEEG(filecontrol)
 print("finish1")
-# X2=readEEG(filefu)
-# print("finish2")
-# X3=readEEG(filepost)
-# print("finish3")
-# X4=readEEG(filepre)
-# print("finish4")
-# X5=readNormalized1stDifferenceEEG(filecontrol)
-# print("finish5")
-# X6=read2stDifferenceEEG(filecontrol)
-# print("finish6")
-# X7=readNormalized2stDifferenceEEG(filecontrol)
-# print("finish7")
-# 
-#np.savetxt('allfu_afterv6Power.csv', X1, delimiter=',')
-np.save('allcontrol_afterv6RawEEGflip', X1) 
-#np.savetxt('allfu_afterv6Mean.csv', X2, delimiter=',')
-# np.save('allfu_afterv6RawEEGflip', X2)
-# #np.savetxt('allfu_afterv6StandardDeviation.csv', X3, delimiter=',')
-# np.save('allpost_afterv6RawEEGflip', X3) 
-# #np.savetxt('allfu_afterv61stDifference.csv', X4, delimiter=',')
-# np.save('allpre_afterv6RawEEGflip', X4) 
-# np.savetxt('allfu_afterv6Normalized1stDifference.csv', X5, delimiter=',')
-# np.save('allfu_afterv6Normalized1stDifference', X5) 
-# np.savetxt('allfu_afterv62stDifference.csv', X6, delimiter=',')
-# np.save('allfu_afterv62stDifference', X6) 
-# np.savetxt('allfu_afterv6Normalized2stDifference.csv', X7, delimiter=',')
-# np.save('allfu_afterv6Normalized2stDifference', X7) 
+X2=readEEG(filefu)
+print("finish2")
+X3=readEEG(filepost)
+print("finish3")
+X4=readEEG(filepre)
+print("finish4")
+X5=readNormalized1stDifferenceEEG(filecontrol)
+print("finish5")
+X6=read2stDifferenceEEG(filecontrol)
+print("finish6")
+X7=readNormalized2stDifferenceEEG(filecontrol)
+print("finish7")
  
-# print(filecontrol['alldata2'].shape)
-# 
-# print("finish")
-# 
-# fileresp=sio.loadmat('allresp.mat')
-# percentb=np.zeros(shape=[24,1])
-# percentg=np.zeros(shape=[24,1])
-# percentw=np.zeros(shape=[24,1])
-# for index in range(0,24):
-#     percentb[index]=fileresp['allresp'][0][index][2][0]/441
-#     percentg[index]=fileresp['allresp'][0][index][2][1]/441
-#     percentw[index]=fileresp['allresp'][0][index][2][2]/441
-# print(percentb)
-# print(percentg)
-# print(percentw)
-# percentControlb=np.zeros(shape=[len(X1)])
-# percentControlg=np.zeros(shape=[len(X1)])
-# percentControlw=np.zeros(shape=[len(X1)])
-# percentControlbgw=np.zeros(shape=[len(X1),3])
-# for index in range(len(X1)):
-#     number=filecontrol['alldata2'][index][1]-1
-#     percentControlb[index]=percentb[number]*100
-#     percentControlg[index]=percentg[number]*100
-#     percentControlw[index]=percentw[number]*100
-#     percentControlbgw[index][0]=percentb[number]*100
-#     percentControlbgw[index][1]=percentg[number]*100
-#     percentControlbgw[index][2]=percentw[number]*100
-# print(percentControlb.shape)
-# print(percentControlg.shape)
-# print(percentControlw.shape)
-# print(percentControlbgw.shape)
-# np.savetxt('allfu_afterv6respB.csv', percentControlb, delimiter=',')
-# np.save('allfu_afterv6respB', percentControlb) 
-# np.savetxt('allfu_afterv6respG.csv', percentControlg, delimiter=',')
-# np.save('allfu_afterv6respG', percentControlg) 
-# np.savetxt('allfu_afterv6respW.csv', percentControlw, delimiter=',')
-# np.save('allfu_afterv6respW', percentControlw) 
-# np.savetxt('allfu_afterv6resp.csv', percentControlbgw, delimiter=',')
-# np.save('allfu_afterv6resp', percentControlbgw) 
+# np.savetxt('allfu_afterv6Power.csv', X1, delimiter=',')
+np.save('allcontrol_afterv6RawEEGflip', X1) 
+# np.savetxt('allfu_afterv6Mean.csv', X2, delimiter=',')
+np.save('allfu_afterv6RawEEGflip', X2)
+#np.savetxt('allfu_afterv6StandardDeviation.csv', X3, delimiter=',')
+np.save('allpost_afterv6RawEEGflip', X3) 
+#np.savetxt('allfu_afterv61stDifference.csv', X4, delimiter=',')
+np.save('allpre_afterv6RawEEGflip', X4) 
+# np.savetxt('allfu_afterv6Normalized1stDifference.csv', X5, delimiter=',')
+np.save('allfu_afterv6Normalized1stDifference', X5) 
+# np.savetxt('allfu_afterv62stDifference.csv', X6, delimiter=',')
+np.save('allfu_afterv62stDifference', X6) 
+# np.savetxt('allfu_afterv6Normalized2stDifference.csv', X7, delimiter=',')
+np.save('allfu_afterv6Normalized2stDifference', X7) 
+ 
+print(filecontrol['alldata2'].shape)
+ 
+print("finish")
+ 
+fileresp=sio.loadmat('allresp.mat')
+percentb=np.zeros(shape=[24,1])
+percentg=np.zeros(shape=[24,1])
+percentw=np.zeros(shape=[24,1])
+for index in range(0,24):
+    percentb[index]=fileresp['allresp'][0][index][2][0]/441
+    percentg[index]=fileresp['allresp'][0][index][2][1]/441
+    percentw[index]=fileresp['allresp'][0][index][2][2]/441
+print(percentb)
+print(percentg)
+print(percentw)
+percentControlb=np.zeros(shape=[len(X1)])
+percentControlg=np.zeros(shape=[len(X1)])
+percentControlw=np.zeros(shape=[len(X1)])
+percentControlbgw=np.zeros(shape=[len(X1),3])
+for index in range(len(X1)):
+    number=filecontrol['alldata2'][index][1]-1
+    percentControlb[index]=percentb[number]*100
+    percentControlg[index]=percentg[number]*100
+    percentControlw[index]=percentw[number]*100
+    percentControlbgw[index][0]=percentb[number]*100
+    percentControlbgw[index][1]=percentg[number]*100
+    percentControlbgw[index][2]=percentw[number]*100
+print(percentControlb.shape)
+print(percentControlg.shape)
+print(percentControlw.shape)
+print(percentControlbgw.shape)
+np.savetxt('allfu_afterv6respB.csv', percentControlb, delimiter=',')
+np.save('allfu_afterv6respB', percentControlb) 
+np.savetxt('allfu_afterv6respG.csv', percentControlg, delimiter=',')
+np.save('allfu_afterv6respG', percentControlg) 
+np.savetxt('allfu_afterv6respW.csv', percentControlw, delimiter=',')
+np.save('allfu_afterv6respW', percentControlw) 
+np.savetxt('allfu_afterv6resp.csv', percentControlbgw, delimiter=',')
+np.save('allfu_afterv6resp', percentControlbgw) 
 
 
 
