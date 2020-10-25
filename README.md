@@ -1,5 +1,6 @@
 # Resting-State-EEG-based-Visual-Field-Encoding-with-Deep-Neural-Networks-for-Stroke-Patients
 Master thesis
+
 src folder contains the processing codes of EEG signals, which contains time domain feature extraction, and reorganization of  frequency spectrum.
 Matlab folder contains calculation of entropy, frequency spectrum, electrode_connectivity, channel sort and data flip.
 
